@@ -1,19 +1,19 @@
-interface itemProp {
+interface items {
   description: string;
   quantity: number;
   id: number;
   packed: boolean;
 }
-interface item {
-  items: itemProp[];
+interface Props {
+  item: items[];
 }
 
-const Items = ({ items }: item) => {
+const Items = ({ item }: Props) => {
   return (
     <>
       <li>
-        <span style={items.packed ? { textDecoration: "line-through" } : {}}>
-          {items.description} {items.quantity}
+        <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+          {item.description} {item.quantity}
         </span>
         <button>❌</button>
       </li>

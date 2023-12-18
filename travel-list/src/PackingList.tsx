@@ -8,11 +8,11 @@ const PackingList = () => {
   return (
     <>
       <div className="list">
-        <ul className="list">
+        <ul>
           {/* get the itemList here */}
 
           {initialItems.map((item) => (
-            <Items item={item} />
+            <Items item={item} key={item.id} />
           ))}
         </ul>
       </div>
