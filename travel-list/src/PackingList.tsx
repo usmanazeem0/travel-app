@@ -4,15 +4,25 @@ import Items from "./Items";
 // first import the list of items to be used
 import { initialItems } from "./App";
 
-const PackingList = () => {
+interface Props {
+  items: itemsProps[];
+}
+interface itemsProps {
+  id: number;
+  description: string;
+  packed: boolean;
+  quantity: number;
+}
+
+const PackingList = ({ items }: Props) => {
   return (
     <>
       <div className="list">
         <ul>
           {/* get the itemList here */}
 
-          {initialItems.map((item) => (
-            <Items item={item} key={item.id} />
+          {items.map((item) => (
+            <Items items={[item]} key={item.id} />
           ))}
         </ul>
       </div>

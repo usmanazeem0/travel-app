@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-const Form = () => {
+// define the interface of addItemHandle
+interface Props {
+  onAddItems: () => void;
+}
+
+const Form = ({ onAddItems }: Props) => {
   //  define the useState hook
 
   const [description, setDescription] = useState("");
@@ -10,10 +15,13 @@ const Form = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // now add the data to getOut from form
+    // now add the data to getOut from the form
     if (!description) return;
     const newItem = { description, quantity, packed: false, id: Date.now() };
     console.log(newItem);
+
+    // call the function to add shows items dynamicaly
+    onAddItems(newItem);
 
     // after submit form go back to its initial state
     setQuantity(1);
