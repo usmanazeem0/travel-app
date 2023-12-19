@@ -9,10 +9,9 @@ const PackingList = () => {
     <>
       <div className="list">
         <ul>
-          {/* get the itemList here */}
-
           {initialItems.map((item) => (
-            <Items item={item} key={item.id} />
+            //Wrap the item in an array
+            <Items items={[item]} key={item.id} />
           ))}
         </ul>
       </div>
