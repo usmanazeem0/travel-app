@@ -1,4 +1,4 @@
-interface items {
+interface item {
   description: string;
   quantity: number;
   id: number;
